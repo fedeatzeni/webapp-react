@@ -14,6 +14,7 @@ header a{
     text-decoration: none;
 }
 
+/* cards */
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -25,7 +26,56 @@ header a{
     flex-basis: 30%;
 }
 
-.card img {
+.container .card img {
     max-width: 100%;
 
+}
+
+/* detail */
+.detail {
+    margin-top: 30px;
+    padding: 0 15px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.detail .flex{
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.detail .card-title{
+    font-size: 25px;
+}
+
+.detail img{
+    max-height: 300px;
+}
+
+.detail form {
+    margin-top: 30px;
+}
+
+.detail form h2{
+    margin: 10px;
+}
+
+.detail form input{
+    margin: 10px 5px;
+}
+
+.detail form .form-control{
+    width: 98%;
+}
+
+.detail form .btn {
+    margin: 10px 20px;
+}
+
+.detail .left {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0;
 }
