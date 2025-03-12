@@ -1,7 +1,7 @@
 import axios from "axios"
 
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 
 import DetailCard from "../components/DatailCard"
 
@@ -10,6 +10,8 @@ export default function MoviePage() {
     const { id } = useParams()
 
     const [movie, setMovie] = useState({})
+
+    const redirect = useNavigate()
 
 
     function fetchMovie() {
@@ -20,7 +22,10 @@ export default function MoviePage() {
                     setMovie(res.data)
                 }
             )
-            .catch(err => console.log(err))
+            .catch(err => {
+                console.log(err);
+                if (err.status === 404) redirect("/404")
+            })
     }
 
     //useEffect
@@ -28,6 +33,6 @@ export default function MoviePage() {
     useEffect(fetchMovie, [])
 
     return (
-        <DetailCard key={movie.id} movieProps={movie}/>
+        <DetailCard key={movie.id} movieProps={movie} />
     )
 }
