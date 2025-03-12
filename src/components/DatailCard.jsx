@@ -1,43 +1,49 @@
 import { Link } from "react-router-dom"
 
 
-export default function DetailCard() {
+export default function DetailCard({ movieProps }) {
+
+    const { id, title, director, abstract, image, reviews } = movieProps
+
     return (
         <div className="detail" >
             <div className="flex">
-                <img src="/inception.jpg" alt="..." />
+                <img src={image} alt={title} />
                 <div>
-                    <h5 className="card-title">Titolo</h5>
-                    <div>regista</div>
-                    <div>descrizione</div>
+                    <h5 className="card-title">{title}</h5>
+                    <div>director: {director}</div>
+                    <div>{abstract}</div>
                 </div>
             </div>
 
             <div>
                 <h2>Reviews</h2>
-                <div className="card">
-                    <div className="card-body">
-                        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <div><strong>Vote:</strong></div>
-                        <div>Name</div>
+                {reviews?.map(review => (
+                    <div key={review.id} className="card">
+                        <div className="card-body">
+                            <p className="card-text">{review.text}</p>
+                            <div><strong>Vote: {review.vote}</strong></div>
+                            <div>{review.name}</div>
+                        </div>
                     </div>
-                </div>
+                ))}
+
             </div>
 
             <form>
                 <div className="card">
                     <h2>Add Review</h2>
 
-                    <div class="col-12">
-                        <input type="text" class="form-control" id="a" placeholder="name" />
+                    <div className="col-12">
+                        <input type="text" className="form-control" id="a" placeholder="name" />
 
-                        <input type="text" class="form-control" id="b" placeholder="review" />
+                        <input type="text" className="form-control" id="b" placeholder="review" />
 
-                        <input type="text" class="form-control" id="c" placeholder="vote" />
+                        <input type="text" className="form-control" id="c" placeholder="vote" />
 
                     </div>
-                    <div class="col-12 left">
-                        <button type="submit" class="btn btn-danger">Submit</button>
+                    <div className="col-12 left">
+                        <button type="submit" className="btn btn-danger">Submit</button>
                     </div>
                 </div>
             </form>
