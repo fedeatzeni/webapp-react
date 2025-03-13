@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom"
 
+import ReviewForm from "./ReviewForm"
 
-export default function DetailCard({ movieProps }) {
+
+export default function DetailCard({ movieProps, realoadReviews }) {
 
     const { id, title, director, abstract, image, reviews } = movieProps
 
@@ -30,23 +32,7 @@ export default function DetailCard({ movieProps }) {
 
             </div>
 
-            <form>
-                <div className="card">
-                    <h2>Add Review</h2>
-
-                    <div className="col-12">
-                        <input type="text" className="form-control" id="a" placeholder="name" />
-
-                        <input type="text" className="form-control" id="b" placeholder="review" />
-
-                        <input type="text" className="form-control" id="c" placeholder="vote" />
-
-                    </div>
-                    <div className="col-12 left">
-                        <button type="submit" className="btn btn-danger">Submit</button>
-                    </div>
-                </div>
-            </form>
+            <ReviewForm movie_id={id} realoadReviews={realoadReviews} />
 
             <div className="left">
                 <Link to="/" className="btn btn-danger">Ritorna alla home</Link>

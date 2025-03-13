@@ -33,6 +33,6 @@ export default function MoviePage() {
     useEffect(fetchMovie, [])
 
     return (
-        <DetailCard key={movie.id} movieProps={movie} />
+        <DetailCard key={movie.id} movieProps={movie} realoadReviews={fetchMovie}/>
     )
 }
