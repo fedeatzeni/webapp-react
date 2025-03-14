@@ -12,6 +12,7 @@ header {
 header a {
     color: white;
     text-decoration: none;
+    margin: 0 10px;
 }
 
 /* cards */
@@ -79,4 +80,13 @@ header a {
     display: flex;
     justify-content: flex-end;
     margin: 10px 0;
+}
+
+.center {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.center h2 {
+    text-align: center;
 }

@@ -4,6 +4,7 @@ import DefaultLayout from "./layouts/DefaultLayout"
 import HomePage from "./pages/HomePage"
 import MoviePage from "./pages/MoviePage"
 import Page404 from "./pages/Page404"
+import CreateMoviePage from "./pages/CreateMoviePage"
 
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route element={<DefaultLayout />}>
           <Route path="/" element={<HomePage />}></Route>
+          <Route path="movies/create" element={<CreateMoviePage />}></Route>
           <Route path="/movies/:id" element={<MoviePage />}></Route>
           <Route path="*" element={<Page404 />}></Route>
           
