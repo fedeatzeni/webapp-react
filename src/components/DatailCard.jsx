@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 
 import ReviewForm from "./ReviewForm"
+import Stars from "./Stars"
 
 
 export default function DetailCard({ movieProps, realoadReviews }) {
@@ -24,7 +25,7 @@ export default function DetailCard({ movieProps, realoadReviews }) {
                     <div key={review.id} className="card">
                         <div className="card-body">
                             <p className="card-text">{review.text}</p>
-                            <div><strong>Vote: {review.vote}</strong></div>
+                            <div><strong>Vote: <Stars vote={review.vote} /></strong></div>
                             <div>{review.name}</div>
                         </div>
                     </div>
